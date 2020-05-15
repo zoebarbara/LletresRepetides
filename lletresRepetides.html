@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercici Lletres Repetides</title>
+</head>
+
+<body>
+    <p id=""></p>
+</body>
+
+<script>
+    var nombre = "Zoe Barbara"
+    var name = "Zoe"
+    var surname = "Barbara Rovira"
+
+    //FASE 1
+    console.log("FASE 1");
+
+    for (i = 0; i < nombre.length; i++) {
+        console.log(nombre[i]);
+    }
+
+    //FASE 2
+    console.log("FASE 2");
+
+    var isVocal = /[aeiou]/gi;
+    var isConsonant = /[^aeiou]/gi;
+    var isNumber = /\d/g;
+    var isLetter = /[a-z]/gi;
+    var Blank = /\s/;
+
+
+
+    for (i = 0; i < nombre.length; i++) {
+
+        if (nombre[i].match(isNumber)) {
+            console.log("El carácter " + nombre[i] + " es un número")
+
+        } else if (nombre[i].match(isLetter)) {
+            //console.log("El carácter " + nombre[i] + "es una letra" )
+            if (nombre[i].match(isVocal)) {
+                console.log("El carácter " + nombre[i] + " es una vocal");
+            } else if (nombre[i].match(isConsonant)) {
+                console.log("El carácter " + nombre[i] + " es una consonante");
+            }
+
+        } else {
+            console.log("El carácter " + nombre[i] + " es un carácter especial");
+        }
+    }
+
+    //FASE 3
+    console.log("FASE 3");
+
+    nombre = nombre.toUpperCase();
+    const counter = new Map();
+
+    for (let i = 0; i < nombre.length; i++) {
+        const index = nombre[i];
+        if (!counter[index]) {
+            counter[index] = 0;
+        }
+        counter[index]++;
+    }
+
+    console.log(counter);
+
+
+    //FASE 4
+    console.log("FASE 4");
+    
+    var fullName = name + " " + surname;
+    var fullNameLetters = fullName.split("");
+    console.log(fullNameLetters);
+
+</script>
+</html>
